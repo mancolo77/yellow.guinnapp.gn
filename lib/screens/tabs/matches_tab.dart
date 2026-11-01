@@ -11,10 +11,10 @@ class _MatchesTabState extends State<MatchesTab> {
   int _selectedRound = 1;
 
   final List<Map<String, dynamic>> _guineaMatches = [
-    {'r': 1, 't1': 'Horoya AC', 't2': 'Hafia FC', 'score': '2 : 1', 'stadium': '28 September Stadium', 'status': 'Finished'},
-    {'r': 1, 't1': 'AS Kaloum', 't2': 'Milo FC', 'score': '1 : 1', 'stadium': 'Mission Stadium', 'status': 'Finished'},
-    {'r': 2, 't1': 'CI Kamsar', 't2': 'SOAR Academy', 'score': 'VS', 'stadium': 'Friendship Stadium', 'status': 'Upcoming • 16:00'},
-    {'r': 2, 't1': 'Flamme Olympique', 't2': 'Wakriya AC', 'score': 'VS', 'stadium': 'Lansana Conte Stadium', 'status': 'Upcoming • 18:30'},
+    {'r': 1, 't1': 'Horoya AC', 't2': 'Hafia FC', 'score': '2 : 1', 'stadium': 'Stade du 28 Septembre', 'status': 'Terminé'},
+    {'r': 1, 't1': 'AS Kaloum', 't2': 'Milo FC', 'score': '1 : 1', 'stadium': 'Stade de la Mission', 'status': 'Terminé'},
+    {'r': 2, 't1': 'CI Kamsar', 't2': 'SOAR Academy', 'score': 'VS', 'stadium': "Stade de l'Amitié", 'status': 'À venir • 16:00'},
+    {'r': 2, 't1': 'Flamme Olympique', 't2': 'Wakriya AC', 'score': 'VS', 'stadium': 'Stade Général Lansana Conté', 'status': 'À venir • 18:30'},
   ];
 
   @override
@@ -28,16 +28,16 @@ class _MatchesTabState extends State<MatchesTab> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text('Guinea League 1', style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, color: AppTheme.textMain)),
+              const Text('Ligue 1 Guinée', style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, color: AppTheme.textMain)),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(color: AppTheme.filterBg, borderRadius: BorderRadius.circular(8)),
-                child: const Text('Guinea Football', style: TextStyle(color: AppTheme.primary, fontWeight: FontWeight.bold, fontSize: 12)),
+                child: const Text('Football Guinéen', style: TextStyle(color: AppTheme.primary, fontWeight: FontWeight.bold, fontSize: 12)),
               ),
             ],
           ),
           const SizedBox(height: 12),
-          const Text('Match Center • Live & Upcoming Fixtures', style: TextStyle(color: AppTheme.textSecondary, fontSize: 12)),
+          const Text('Centre de match • En direct & À venir', style: TextStyle(color: AppTheme.textSecondary, fontSize: 12)),
           const SizedBox(height: 16),
           Row(
             children: [1, 2].map((r) {
@@ -45,7 +45,7 @@ class _MatchesTabState extends State<MatchesTab> {
               return Padding(
                 padding: const EdgeInsets.only(right: 8),
                 child: ChoiceChip(
-                  label: Text('Round $r'),
+                  label: Text('Journée $r'),
                   selected: sel,
                   onSelected: (_) => setState(() => _selectedRound = r),
                   selectedColor: AppTheme.primary,

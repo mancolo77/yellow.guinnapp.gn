@@ -20,9 +20,9 @@ class TournamentsTab extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('Guinea League Standings', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: AppTheme.textMain)),
+          const Text('Classement de la Ligue 1', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: AppTheme.textMain)),
           const SizedBox(height: 6),
-          const Text('Official Season 2026 Rankings', style: TextStyle(color: AppTheme.textSecondary, fontSize: 13)),
+          const Text('Classement officiel saison 2026', style: TextStyle(color: AppTheme.textSecondary, fontSize: 13)),
           const SizedBox(height: 16),
           Container(
             padding: const EdgeInsets.all(12),
@@ -34,8 +34,8 @@ class TournamentsTab extends StatelessWidget {
               children: [
                 SizedBox(width: 30, child: Text('#', style: TextStyle(color: AppTheme.textSecondary, fontWeight: FontWeight.bold))),
                 Expanded(child: Text('Club', style: TextStyle(color: AppTheme.textSecondary, fontWeight: FontWeight.bold))),
-                SizedBox(width: 35, child: Text('PL', textAlign: TextAlign.center, style: TextStyle(color: AppTheme.textSecondary, fontWeight: FontWeight.bold))),
-                SizedBox(width: 35, child: Text('W', textAlign: TextAlign.center, style: TextStyle(color: AppTheme.textSecondary, fontWeight: FontWeight.bold))),
+                SizedBox(width: 35, child: Text('MJ', textAlign: TextAlign.center, style: TextStyle(color: AppTheme.textSecondary, fontWeight: FontWeight.bold))),
+                SizedBox(width: 35, child: Text('V', textAlign: TextAlign.center, style: TextStyle(color: AppTheme.textSecondary, fontWeight: FontWeight.bold))),
                 SizedBox(width: 40, child: Text('PTS', textAlign: TextAlign.center, style: TextStyle(color: AppTheme.primary, fontWeight: FontWeight.bold))),
               ],
             ),

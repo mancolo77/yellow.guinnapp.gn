@@ -5,10 +5,10 @@ class FavoritesTab extends StatelessWidget {
   const FavoritesTab({super.key});
 
   final List<Map<String, String>> _clubs = const [
-    {'name': 'Horoya AC', 'city': 'Conakry • Guinea League 1'},
-    {'name': 'Hafia FC', 'city': 'Conakry • Guinea League 1'},
-    {'name': 'AS Kaloum', 'city': 'Kaloum • Guinea League 1'},
-    {'name': 'Milo FC', 'city': 'Kankan • Guinea League 1'},
+    {'name': 'Horoya AC', 'city': 'Conakry • Ligue 1 Guinée'},
+    {'name': 'Hafia FC', 'city': 'Conakry • Ligue 1 Guinée'},
+    {'name': 'AS Kaloum', 'city': 'Kaloum • Ligue 1 Guinée'},
+    {'name': 'Milo FC', 'city': 'Kankan • Ligue 1 Guinée'},
   ];
 
   @override
@@ -18,9 +18,9 @@ class FavoritesTab extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('Favorite Clubs', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: AppTheme.textMain)),
+          const Text('Clubs Favoris', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: AppTheme.textMain)),
           const SizedBox(height: 6),
-          const Text('Saved teams and match highlights', style: TextStyle(color: AppTheme.textSecondary, fontSize: 13)),
+          const Text('Équipes suivies et faits marquants', style: TextStyle(color: AppTheme.textSecondary, fontSize: 13)),
           const SizedBox(height: 16),
           ..._clubs.map((c) => Container(
             margin: const EdgeInsets.only(bottom: 12),
