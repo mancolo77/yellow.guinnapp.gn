@@ -25,7 +25,6 @@ class AppTheme {
       colorScheme: const ColorScheme.dark(
         primary: primary,
         surface: surfaceCard,
-        background: background,
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
