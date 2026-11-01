@@ -8,18 +8,18 @@ class MatchesTab extends StatefulWidget {
 }
 
 class _MatchesTabState extends State<MatchesTab> {
-  int _selectedJournee = 1;
+  int _selectedRound = 1;
 
   final List<Map<String, dynamic>> _guineaMatches = [
-    {'j': 1, 't1': 'Horoya AC', 't2': 'Hafia FC', 'score': '2 : 1', 'stadium': 'Stade du 28 Septembre', 'date': 'Terminé'},
-    {'j': 1, 't1': 'AS Kaloum', 't2': 'Milo FC', 'score': '1 : 1', 'stadium': 'Stade de la Mission', 'date': 'Terminé'},
-    {'j': 2, 't1': 'CI Kamsar', 't2': 'SOAR Académie', 'score': 'VS', 'stadium': 'Stade de l\'Amitié', 'date': 'À venir - 16:00'},
-    {'j': 2, 't1': 'Flamme Olympique', 't2': 'Wakriya AC', 'score': 'VS', 'stadium': 'Stade Général Lansana Conté', 'date': 'À venir - 18:30'},
+    {'r': 1, 't1': 'Horoya AC', 't2': 'Hafia FC', 'score': '2 : 1', 'stadium': '28 September Stadium', 'status': 'Finished'},
+    {'r': 1, 't1': 'AS Kaloum', 't2': 'Milo FC', 'score': '1 : 1', 'stadium': 'Mission Stadium', 'status': 'Finished'},
+    {'r': 2, 't1': 'CI Kamsar', 't2': 'SOAR Academy', 'score': 'VS', 'stadium': 'Friendship Stadium', 'status': 'Upcoming • 16:00'},
+    {'r': 2, 't1': 'Flamme Olympique', 't2': 'Wakriya AC', 'score': 'VS', 'stadium': 'Lansana Conte Stadium', 'status': 'Upcoming • 18:30'},
   ];
 
   @override
   Widget build(BuildContext context) {
-    final list = _guineaMatches.where((e) => e['j'] == _selectedJournee).toList();
+    final list = _guineaMatches.where((e) => e['r'] == _selectedRound).toList();
     return SingleChildScrollView(
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
       child: Column(
@@ -28,27 +28,26 @@ class _MatchesTabState extends State<MatchesTab> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text('Ligue 1 Guinée', style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, color: AppTheme.textMain)),
+              const Text('Guinea League 1', style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, color: AppTheme.textMain)),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(color: AppTheme.filterBg, borderRadius: BorderRadius.circular(8)),
-                child: const Text('Guinée Football', style: TextStyle(color: AppTheme.primary, fontWeight: FontWeight.bold, fontSize: 12)),
+                child: const Text('Guinea Football', style: TextStyle(color: AppTheme.primary, fontWeight: FontWeight.bold, fontSize: 12)),
               ),
             ],
           ),
           const SizedBox(height: 12),
-          const Text('Données fictives — démonstration', style: TextStyle(color: AppTheme.textSecondary, fontSize: 12)),
+          const Text('Match Center • Live & Upcoming Fixtures', style: TextStyle(color: AppTheme.textSecondary, fontSize: 12)),
           const SizedBox(height: 16),
-          // Journees chips
           Row(
-            children: [1, 2].map((j) {
-              final sel = _selectedJournee == j;
+            children: [1, 2].map((r) {
+              final sel = _selectedRound == r;
               return Padding(
                 padding: const EdgeInsets.only(right: 8),
                 child: ChoiceChip(
-                  label: Text('Journée $j'),
+                  label: Text('Round $r'),
                   selected: sel,
-                  onSelected: (_) => setState(() => _selectedJournee = j),
+                  onSelected: (_) => setState(() => _selectedRound = r),
                   selectedColor: AppTheme.primary,
                   backgroundColor: AppTheme.filterBg,
                   labelStyle: TextStyle(color: sel ? AppTheme.buttonTextDark : AppTheme.textMain, fontWeight: FontWeight.bold),
@@ -69,7 +68,7 @@ class _MatchesTabState extends State<MatchesTab> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(m['stadium'], style: const TextStyle(color: AppTheme.textSecondary, fontSize: 12)),
-                      Text(m['date'], style: const TextStyle(color: AppTheme.primary, fontSize: 12, fontWeight: FontWeight.bold)),
+                      Text(m['status'], style: const TextStyle(color: AppTheme.primary, fontSize: 12, fontWeight: FontWeight.bold)),
                     ],
                   ),
                   const SizedBox(height: 12),
